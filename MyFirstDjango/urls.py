@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+
+from ybFirstApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^login$',views.login_demo),
+    url('^demo/$', views.demo,name='demo_page'),
+    url('^home/', views.home,name='home_page'),
+    path("sonpage/", views.sonpage),
+    path("personalview/", views.personalview),
+    path("navlist/", views.navlist),
 ]
